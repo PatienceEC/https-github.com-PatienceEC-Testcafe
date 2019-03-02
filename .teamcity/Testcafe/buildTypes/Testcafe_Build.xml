@@ -3,6 +3,9 @@
   <name>Build</name>
   <description />
   <settings>
+    <options>
+      <option name="artifactRules" value=".git =&gt; .git" />
+    </options>
     <parameters />
     <build-runners>
       <runner id="RUNNER_3" name="Run TestCafe Tests" type="Maven2">
