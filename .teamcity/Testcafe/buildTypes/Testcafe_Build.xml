@@ -5,25 +5,16 @@
   <settings>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_3" name="Run TestCafe Tests" type="simpleRunner">
+      <runner id="RUNNER_3" name="Run TestCafe Tests" type="Maven2">
         <parameters>
-          <param name="command.executable" value="testcafe%vcsroot.submoduleCheckout%" />
+          <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
+          <param name="pomLocation" value="pom.xml" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
           <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_5" name="" type="Xcode">
-        <parameters>
-          <param name="arch" value="default" />
-          <param name="buildActions" value="clean build" />
-          <param name="configuration" value="###default###" />
-          <param name="customBuildOutputDir" value="build" />
-          <param name="platform" value="default" />
-          <param name="project" value="tests%teamcity.build.checkoutDir%" />
-          <param name="runTests" value="true" />
-          <param name="sdk" value="default" />
-          <param name="target" value="###default###" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="xcode" value="3" />
+          <param name="userSettingsSelection" value="userSettingsSelection:default" />
         </parameters>
       </runner>
     </build-runners>
